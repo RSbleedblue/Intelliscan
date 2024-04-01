@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel = "stylesheet" src="style.css">
+    <title>IntelliScan</title>
+</head>
+<body style="background-image: url('assets/bgMain.jpg'); background-size:cover">
+    <!-- Login Page -->
+    <div class="w-full flex p-10 gap-4">
+        <div>        
+            <img src="assets/undraw_environmental_study_re_q4q8.svg">
+        </div>
+         <!--Login SignUp Page  -->
+        <div class=" w-[40%] rounded-lg shadow-2xl flex flex-col p-4">
+            <div class="flex items-center">
+                <img src="assets/intelliScan.png" class="w-20">
+                <p class="font-sans font-semibold">INTELLISCAN</p>
+            </div>
+            <div class="p-4 font-sans">
+                <p class="text-[25px]">Log in to your Account</p>
+            </div>
+            <div class="p-4 flex flex-col gap-2">
+                <p>Email Address</p>
+                <div class="relative w-[45%]">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                      <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                          <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
+                          <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
+                      </svg>
+                    </div>
+                    <input type="text" id="input-group-1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="name@registeredEmail.com">
+                </div>
+            </div>
+            <div class="p-4 flex flex-col gap-2 -mt-4">
+                <p>Password</p>
+                <div class="relative w-[45%]">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 lg:w-5 lg:h-5 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                            <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2ZM7 2h4v3H7V2Zm5.7 8.289-3.975 3.857a1 1 0 0 1-1.393 0L5.3 12.182a1.002 1.002 0 1 1 1.4-1.436l1.328 1.289 3.28-3.181a1 1 0 1 1 1.392 1.435Z"/>
+                        </svg>
+                    </div>
+                    <input type="password" id="input-group-1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="password">
+                </div>
+            </div>
+            <div class="items-center justify-center flex w-[40%] p-1 m-4 rounded-lg bg-blue-600 text-white font-sans hover:cursor-pointer hover:bg-white hover:border border-solid border-blue-600 hover:text-black transition-all delay-100">
+                <button>Login</button>
+            </div>
+            <p class="m-4 text-sm text-gray-400">Dont have an account?<span><a href="#signup" class="text-blue-500 p-1">create account</a></span></p>
+        </div>
+    </div>
+</body>
+</html>
