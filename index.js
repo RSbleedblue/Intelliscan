@@ -35,7 +35,7 @@ function registerUser(event){
         password: password,
     }
     const JSONData = JSON.stringify(data);
-    sessionStorage.setItem("userData", JSONData);
+    localStorage.setItem("userData", JSONData);
 
     const userDataString = sessionStorage.getItem("userData");
     if (userDataString) {
@@ -57,10 +57,9 @@ function registerUser(event){
 function loginUser(event){
     event.preventDefault();
     const getToast = document.getElementById("toast-danger");
-    const userName = document.getElementById("loginEmail").value.trim(); // Trim whitespace
-    const password = document.getElementById("loginPassword").value.trim(); // Trim whitespace
+    const userName = document.getElementById("loginEmail").value.trim(); 
+    const password = document.getElementById("loginPassword").value.trim(); 
 
-    // Check if username or password fields are empty
     if(userName.length === 0 || password.length === 0){
         getToast.classList.remove("hidden");
         setTimeout(function(){
@@ -68,10 +67,7 @@ function loginUser(event){
         }, 3000);
         return;
     }
-    
-    const userData = sessionStorage.getItem("userData");
-    
-    // Check if userData is not found in sessionStorage
+    const userData = localStorage.getItem("userData");
     if(userData === null){
         getToast.classList.remove("hidden");
         setTimeout(function(){
@@ -79,16 +75,10 @@ function loginUser(event){
         }, 3000);
         return;
     }
-
-    // Parse userData
     const userDataParsed = JSON.parse(userData);
-
-    // Check if entered username and password match stored user data
     if(userName === userDataParsed.email && password === userDataParsed.password){
-        // Redirect to home page
         window.location.href = "home.html";
     } else {
-        // Display error toast for invalid credentials
         getToast.classList.remove("hidden");
         setTimeout(function(){
             getToast.classList.add("hidden");
