@@ -1,97 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Landing Page</title>
-</head>
-<body  class = "flex flex-col items-center bg-black"> 
-    <!-- Flex container -->
-    <div class="w-full h-[750px] flex flex-col items-center gap-10" style="background-image: url('assets/bgLandingMain.jpg'); background-size:cover">
-        <!-- nav Bar -->
-        <div class="flex w-[80%] items-center justify-between">
-            <div class="flex  items-center">
-                <div class="w-24 p-4">   
-                    <img src="assets/intelliScan.png" alt="asf">
-                </div>
-                <p class="text-gray-300 font-semibold font-sans text-[20px]">INTELLISCAN</p>
-            </div>
-            <div class="text-white flex gap-10">
-                <a class="text-gray-300 text-sm hover:cursor-pointer hover:scale-105 transition-all ease-in-out duration-50">Home</a>
-                <a class="text-gray-300 text-sm hover:cursor-pointer hover:scale-105 transition-all ease-in-out duration-50">About</a>
-            </div>
-        </div>
-        <div class="text-white text-[50px] w-[40%]">
-            Unlocking <span class="gradient-text font-semibold">Artificial Intelligence</span> full potential
-        </div>
-        <div>
-            <p class="text-white text-[25px] font-extralight">Welcome <span class="gradient-text font-semibold">John Doe</span></p>
-        </div>
-        <div class="flex w-[60%]">
-            <div class=" w-[33%] bg-indigo-600 bg-opacity-10 shadow-xl  p-4 m-2 rounded-tr-3xl flex flex-col p-6 gap-2 items-center">
-                <div class="w-20 h-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M179.503 21.333h225.83A42.667 42.667 0 0 1 448 64v384a42.667 42.667 0 0 1-42.667 42.667H106.667A42.667 42.667 0 0 1 64 448V136.837a21.333 21.333 0 0 1 6.248-15.085l94.17-94.17a21.333 21.333 0 0 1 15.085-6.249z" style="fill:#ccd4ff"/><rect x="85.333" y="149.333" width="149.333" height="64" rx="32" ry="32" style="fill:#a4b1ff"/><path d="M213.333 51.503v88.994a30.17 30.17 0 0 1-30.17 30.17H94.17A30.17 30.17 0 0 1 64 140.497a30.17 30.17 0 0 1 8.837-21.334L161.83 30.17a30.17 30.17 0 0 1 21.333-8.837 30.17 30.17 0 0 1 30.17 30.17z" style="fill:#dfe5ff"/><rect x="69.49" y="80.915" width="138.353" height="30.17" rx="15.085" ry="15.085" transform="rotate(-45 138.667 96)" style="fill:#eff2ff"/><rect x="234.667" y="85.333" width="149.333" height="170.667" rx="21.333" ry="21.333" style="fill:#005eee"/><path d="M170.667 426.667h-21.334a21.333 21.333 0 0 1 0-42.667h21.334a21.333 21.333 0 0 1 0 42.667zM362.667 426.667H256A21.333 21.333 0 0 1 256 384h106.667a21.333 21.333 0 0 1 0 42.667zM362.667 341.333H149.333a21.333 21.333 0 1 1 0-42.666h213.334a21.333 21.333 0 1 1 0 42.666z" style="fill:#163969"/><circle cx="309.333" cy="138.667" r="32" style="fill:gold"/><path d="M341.333 192h-64a21.333 21.333 0 0 0 0 42.667h64a21.333 21.333 0 1 0 0-42.667z" style="fill:gold"/><rect x="256" y="256" width="106.667" height="21.333" rx="10.667" ry="10.667" style="fill:#a4b1ff"/></svg>
-                </div>
-                <p class="text-white">Build Resume</p>
-                <button class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 shadow-xl text-white font-sans hover:cursor-pointer  hover:border hover:border-solid hover:border-blue-600" onclick="takeMe()"><a href="#create-Resume">Create</a></button>
-                
-            </div>
-            <div class="w-[33%] bg-indigo-600 bg-opacity-20 shadow-xl p-4 m-2 rounded-tr-3xl flex flex-col p-6 gap-2 items-center">
-                <div class="w-20 h-20">
-                    <svg version="1.1" id="ecommerce_1_" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 115 115" style="enable-background:new 0 0 115 115" xml:space="preserve"><style>.st1{fill:#c9b77d}.st8{fill:#ffcc5c}</style><g id="recommended_1_"><path d="M109.459 64.101c0-3.497-2.861-6.358-6.358-6.358H79.985c1.121-1.516 1.931-2.733 2.418-3.701 1.51-2.998 3.357-7.035 4.07-12.556.712-5.521-2.672-12.111-5.521-12.111-2.85 0-4.809 1.069-5.165 3.206-.356 2.137-6.634 12.423-10.553 15.629-3.294 2.695-11.541 8.566-14.087 10.37-5.189.765-9.177 5.224-9.177 10.626v34.997c0 5.347 3.906 9.77 9.018 10.602h41.125c.194-.058.393-.104.578-.18.058-.024.112-.054.17-.079a6.43 6.43 0 0 0 .856-.466c.051-.033.104-.062.154-.096.291-.201.56-.427.813-.672.059-.057.115-.116.172-.175.247-.258.48-.529.682-.824h-.001a6.317 6.317 0 0 0 1.1-3.561v-2.27c0-2.356-1.313-4.399-3.23-5.497h2.215c.391 0 .771-.047 1.143-.116.079-.015.157-.028.235-.045.357-.08.703-.186 1.034-.323.058-.024.112-.054.17-.079a6.43 6.43 0 0 0 .856-.466c.051-.033.103-.061.153-.095.29-.201.56-.427.813-.672.059-.057.115-.116.172-.176.247-.258.481-.528.682-.824h-.001a6.31 6.31 0 0 0 1.1-3.561v-2.271c0-2.356-1.313-4.399-3.23-5.497h1.146c.391 0 .771-.047 1.143-.116.079-.015.157-.028.235-.045a6.21 6.21 0 0 0 1.034-.323c.058-.024.112-.053.169-.079.299-.134.584-.29.857-.466.051-.033.104-.062.153-.096.291-.201.56-.427.814-.672.059-.057.115-.116.172-.175.247-.258.481-.528.682-.824h-.001a6.31 6.31 0 0 0 1.1-3.561v-2.271c0-2.356-1.313-4.399-3.23-5.497h.078c.392 0 .771-.048 1.144-.116.079-.015.157-.028.234-.045a6.25 6.25 0 0 0 1.035-.323c.058-.024.112-.053.169-.079.299-.134.584-.29.857-.466.051-.033.104-.061.153-.096.291-.2.56-.427.814-.672.059-.057.115-.116.172-.175.247-.258.481-.528.682-.824h-.001a6.31 6.31 0 0 0 1.1-3.561v-2.277z" style="fill:#ffeead"/><path class="st1" d="M92.112 114.803c.194-.058.393-.104.578-.18.058-.024.112-.054.17-.079a6.43 6.43 0 0 0 .856-.466c.051-.033.104-.062.154-.096.291-.201.56-.427.813-.672.059-.057.115-.116.172-.175.247-.258.48-.529.682-.824h-.001a6.314 6.314 0 0 0 1.075-3.246 6.917 6.917 0 0 0-.149.232c-.571.951-1.427 1.728-2.405 2.374-2.543 1.077-16.474 1.329-25.617 1.108-9.108-.219-13.621-1.102-13.662-1.11-2.065-.787-3.643-1.563-4.561-2.251-8.718-6.539-6.103-22.449-6.103-22.449l-2.146 6.118v11.115c0 5.347 3.906 9.77 9.018 10.602h41.126z"/><path d="M31.647 61.033H9.854a5.133 5.133 0 0 0-5.133 5.134v42.631a5.133 5.133 0 0 0 5.133 5.133h21.793a5.134 5.134 0 0 0 5.134-5.133V66.167a5.135 5.135 0 0 0-5.134-5.134z" style="fill:#ff6f69"/><path d="M31.647 61.033h-2.059v42.534a5.133 5.133 0 0 1-5.134 5.133H4.721v.098a5.133 5.133 0 0 0 5.133 5.133h21.793a5.134 5.134 0 0 0 5.134-5.133V66.167a5.135 5.135 0 0 0-5.134-5.134z" style="fill:#e05858"/><path d="M40.536 58.896h-4.305a3.992 3.992 0 0 0-3.992 3.992v48.12A3.992 3.992 0 0 0 36.231 115h4.305a3.992 3.992 0 0 0 3.992-3.992v-48.12a3.992 3.992 0 0 0-3.992-3.992z" style="fill:#96ceb4"/><path d="M40.536 109.115h-4.305a3.992 3.992 0 0 1-3.992-3.993v5.885a3.992 3.992 0 0 0 3.992 3.992h4.305a3.992 3.992 0 0 0 3.992-3.992v-5.885a3.992 3.992 0 0 1-3.992 3.993z" style="fill:#71a58a"/><path class="st1" d="M80.132 53.622c-1.588 1.482-4.13 3.26-5.728 4.121h5.581c1.012-1.25 2.155-3.119 2.714-4.294 1.336-2.808 1.944-3.898 2.867-7.39-1.007 1.697-3.517 5.774-5.434 7.563zM104.479 72.568a6.25 6.25 0 0 0 1.035-.323c.058-.024.112-.053.169-.079.299-.134.584-.29.857-.466.051-.033.104-.061.153-.096.291-.2.56-.427.814-.672.059-.057.115-.116.172-.175.247-.258.481-.528.682-.824h-.001a6.324 6.324 0 0 0 .822-1.722c-3.585 3.195-10.701 3.879-10.701 3.879l4.62.641c.392 0 .771-.048 1.144-.116.078-.017.156-.029.234-.047zM99.895 86.855c.391 0 .771-.047 1.143-.116.079-.015.157-.028.235-.045a6.21 6.21 0 0 0 1.034-.323c.058-.024.112-.053.169-.079.299-.134.584-.29.857-.466.051-.033.104-.062.153-.096.291-.201.56-.427.814-.672.059-.057.115-.116.172-.175.247-.258.481-.528.682-.824h-.001a6.306 6.306 0 0 0 1.097-3.524 6.196 6.196 0 0 0-.318.451c-2.811 4.382-11.902 5.248-11.902 5.248l4.719.622h1.146zM93.406 100.981h2.215c.391 0 .771-.047 1.143-.116.079-.015.157-.028.235-.045.357-.08.703-.186 1.034-.323.058-.024.112-.054.17-.079a6.43 6.43 0 0 0 .856-.466c.051-.033.103-.061.153-.095.29-.201.56-.427.813-.672.059-.057.115-.116.172-.176.247-.258.481-.528.682-.824h-.001a6.31 6.31 0 0 0 1.097-3.522 5.328 5.328 0 0 0-.446.611c-2.811 4.382-11.902 5.248-11.902 5.248l3.852.508c-.025-.015-.048-.034-.073-.049z"/><g><path class="st8" d="M81.752 0c-2.271 0-4.112 1.841-4.112 4.112s1.841 10.455 4.112 10.455 4.112-8.185 4.112-10.455S84.023 0 81.752 0z"/></g><g><path class="st8" d="M57.337 24.415a4.112 4.112 0 1 0 0 8.224c2.271 0 10.455-1.841 10.455-4.112s-8.184-4.112-10.455-4.112z"/></g><g><path class="st8" d="M106.168 24.415c-2.271 0-10.455 1.841-10.455 4.112s8.185 4.112 10.455 4.112a4.112 4.112 0 1 0 0-8.224z"/></g><g><path class="st8" d="M67.395 8.355a4.111 4.111 0 1 0-5.815 5.815c1.606 1.606 8.695 6.092 10.3 4.486 1.607-1.606-2.879-8.695-4.485-10.301z"/></g><g><path class="st8" d="M101.924 8.355a4.111 4.111 0 0 0-5.815 0c-1.606 1.606-6.091 8.695-4.486 10.3 1.606 1.606 8.695-2.88 10.3-4.486a4.11 4.11 0 0 0 .001-5.814z"/></g></g></svg>
-                </div>  
-                <p class="text-white">Job Recommendation</p>
-                <button class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 shadow-xl text-white font-sans hover:cursor-pointer  hover:border hover:border-solid hover:border-blue-600 ">Find</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-            </div>
-            <div class=" w-[33%] bg-indigo-600 bg-opacity-20 shadow-xl p-4 m-2 rounded-tr-3xl flex flex-col p-6 items-center gap-2 container" >
-                <div class="w-20 h-20">
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><style>.st0{fill:#6770e6}.st1{fill:#5861c7}.st15{fill:#a1f1fc}</style><path id="XMLID_145_" class="st0" d="m503.285 450.75-494.564.007a8.718 8.718 0 0 1-8.718-8.718l-.004-315.612a8.718 8.718 0 0 1 8.718-8.718l494.564-.007a8.718 8.718 0 0 1 8.718 8.718l.004 315.612a8.718 8.718 0 0 1-8.718 8.718z"/><path id="XMLID_144_" d="M30.003 412.038 30 156.426a8.718 8.718 0 0 1 8.718-8.718l434.564-.006A8.718 8.718 0 0 1 482 156.42l.003 255.612a8.718 8.718 0 0 1-8.718 8.718l-434.564.006a8.718 8.718 0 0 1-8.718-8.718z" style="fill:#339"/><path d="M429.993 421V92.007L339 .007 102.007 0c-11.046 0-20 8.954-20 20v401h347.986z" style="fill:#69ebfc"/><path class="st15" d="M339 .007 102.007 0c-11.046 0-20 8.954-20 20L339 20.007v-20zM429.993 91H359c-11.046 0-20-8.954-20-20V.007L429.993 91z"/><path class="st0" d="M327.38 181.805h-12.261a58.568 58.568 0 0 0-6.146-14.446l8.499-8.499a4.62 4.62 0 0 0 0-6.534l-14.818-14.818a4.62 4.62 0 0 0-6.533 0l-8.708 8.708a58.497 58.497 0 0 0-14.522-5.873V128.29a4.62 4.62 0 0 0-4.62-4.62h-20.955a4.62 4.62 0 0 0-4.62 4.62v12.343a58.55 58.55 0 0 0-14.395 6.113l-8.55-8.549a4.618 4.618 0 0 0-6.533 0L198.4 153.014a4.62 4.62 0 0 0 0 6.534l8.732 8.732a58.499 58.499 0 0 0-5.889 14.498h-12.062a4.62 4.62 0 0 0-4.62 4.62v20.955a4.62 4.62 0 0 0 4.62 4.62h12.307a58.556 58.556 0 0 0 6.111 14.434l-8.511 8.511a4.62 4.62 0 0 0 0 6.534l14.818 14.817a4.62 4.62 0 0 0 6.533 0l8.673-8.673a58.512 58.512 0 0 0 14.557 5.919v11.974a4.62 4.62 0 0 0 4.62 4.62h20.955a4.62 4.62 0 0 0 4.62-4.62v-12.225a58.55 58.55 0 0 0 14.484-6.143l8.461 8.46a4.62 4.62 0 0 0 6.533 0l14.818-14.818a4.62 4.62 0 0 0 0-6.533l-8.649-8.649A58.526 58.526 0 0 0 315.414 212h11.966a4.62 4.62 0 0 0 4.62-4.62v-20.955a4.62 4.62 0 0 0-4.62-4.62zm-69.062 47.662c-17.689 0-32.029-14.34-32.029-32.029 0-17.689 14.34-32.029 32.029-32.029 17.689 0 32.029 14.34 32.029 32.029 0 17.689-14.34 32.029-32.029 32.029z"/><path d="M363 384H153c-7.732 0-14-6.268-14-14s6.268-14 14-14h210c7.732 0 14 6.268 14 14s-6.268 14-14 14z" style="fill:#fff7f2"/><path class="st0" d="M365.206 216.225c-4.284-1.04-8.619 1.595-9.659 5.89C344.429 267.973 303.675 300 256.44 300c-29.675 0-57.824-12.901-77.229-35.395-11.215-13-18.372-29.443-20.759-47.28l.831.831c1.562 1.562 3.609 2.343 5.657 2.343s4.095-.781 5.657-2.343a7.998 7.998 0 0 0 0-11.313l-15-15a8 8 0 0 0-11.313 0l-15 15a7.998 7.998 0 0 0 0 11.313 8 8 0 0 0 11.313 0l1.655-1.655c2.37 22.02 10.968 42.47 24.844 58.555C189.544 301.077 222.108 316 256.44 316c26.995 0 52.399-8.876 73.467-25.67 20.435-16.29 35.062-39.177 41.188-64.445a7.999 7.999 0 0 0-5.889-9.66zM382.717 177.843a8 8 0 0 0-11.314 0l-1.655 1.655c-2.37-22.02-10.968-42.47-24.844-58.555C322.455 94.923 289.891 80 255.56 80c-26.996 0-52.4 8.876-73.467 25.67-20.435 16.29-35.063 39.177-41.189 64.445a8 8 0 0 0 15.55 3.77C167.571 128.027 208.325 96 255.56 96c29.675 0 57.823 12.901 77.229 35.395 11.216 13 18.373 29.442 20.759 47.279l-.83-.83a8 8 0 0 0-11.314 11.313l15 15c1.562 1.562 3.609 2.343 5.657 2.343s4.095-.781 5.657-2.343l15-15a8.002 8.002 0 0 0-.001-11.314z"/><path d="M304 356H153c-7.732 0-14 6.268-14 14s6.268 14 14 14h151v-28z" style="fill:#ff8354"/><path id="XMLID_143_" class="st1" d="M199.151 450.753h113.704v39.282H199.151z"/><path id="XMLID_142_" class="st0" d="M341.878 511.998 170.13 512c-6.065 0-10.982-4.917-10.982-10.982 0-6.065 4.917-10.982 10.982-10.982l171.747-.002c6.065 0 10.982 4.917 10.982 10.982 0 6.065-4.916 10.982-10.981 10.982z"/><path id="XMLID_141_" class="st1" d="M341.877 501.998 170.13 502c-4.263 0-7.949-2.433-9.77-5.982a10.918 10.918 0 0 0-1.212 5c0 6.065 4.917 10.982 10.982 10.982l171.747-.002c6.065 0 10.982-4.917 10.982-10.982a10.93 10.93 0 0 0-1.212-5c-1.82 3.548-5.507 5.982-9.77 5.982z"/></svg>
-                </div>
-                <p class="text-white">Project Recommendation</p>
-                
-                <button class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 shadow-xl text-white font-sans hover:cursor-pointer  hover:border hover:border-solid hover:border-blue-600 ">Find</button>
-            </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Landing Page</title>
+  </head>
+  <body class="flex flex-col items-center bg-black">
+    <!-- Flex container -->
+    <div
+      class="w-full h-[750px] flex flex-col items-center gap-10"
+      style="
+        background-image: url('assets/bgLandingMain.jpg');
+        background-size: cover;
+      "
+    >
+      <!-- nav Bar -->
+      <div class="flex w-[80%] items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-24 p-4">
+            <img src="assets/intelliScan.png" alt="asf" />
+          </div>
+          <p class="text-gray-300 font-semibold font-sans text-[20px]">
+            INTELLISCAN
+          </p>
         </div>
+        <div class="text-white flex gap-10">
+          <a
+            class="text-gray-300 text-sm hover:cursor-pointer hover:scale-105 transition-all ease-in-out duration-50"
+            >Home</a
+          >
+          <a
+            class="text-gray-300 text-sm hover:cursor-pointer hover:scale-105 transition-all ease-in-out duration-50"
+            >About</a
+          >
+        </div>
+      </div>
+      <div class="text-white text-[50px] w-[40%]">
+        Unlocking
+        <span class="gradient-text font-semibold">Artificial Intelligence</span>
+        full potential
+      </div>
+      <div>
+        <p class="text-white text-[25px] font-extralight">
+          Welcome <span class="gradient-text font-semibold">John Doe</span>
+        </p>
+      </div>
+      <div class="flex w-[60%]">
+        <div
+          class="w-[33%] bg-indigo-600 bg-opacity-10 shadow-xl p-4 m-2 rounded-tr-3xl flex flex-col p-6 gap-2 items-center"
+        >
+          <div class="w-20 h-20">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M179.503 21.333h225.83A42.667 42.667 0 0 1 448 64v384a42.667 42.667 0 0 1-42.667 42.667H106.667A42.667 42.667 0 0 1 64 448V136.837a21.333 21.333 0 0 1 6.248-15.085l94.17-94.17a21.333 21.333 0 0 1 15.085-6.249z"
+                style="fill: #ccd4ff"
+              />
+              <rect
+                x="85.333"
+                y="149.333"
+                width="149.333"
+                height="64"
+                rx="32"
+                ry="32"
+                style="fill: #a4b1ff"
+              />
+              <path
+                d="M213.333 51.503v88.994a30.17 30.17 0 0 1-30.17 30.17H94.17A30.17 30.17 0 0 1 64 140.497a30.17 30.17 0 0 1 8.837-21.334L161.83 30.17a30.17 30.17 0 0 1 21.333-8.837 30.17 30.17 0 0 1 30.17 30.17z"
+                style="fill: #dfe5ff"
+              />
+              <rect
+                x="69.49"
+                y="80.915"
+                width="138.353"
+                height="30.17"
+                rx="15.085"
+                ry="15.085"
+                transform="rotate(-45 138.667 96)"
+                style="fill: #eff2ff"
+              />
+              <rect
+                x="234.667"
+                y="85.333"
+                width="149.333"
+                height="170.667"
+                rx="21.333"
+                ry="21.333"
+                style="fill: #005eee"
+              />
+              <path
+                d="M170.667 426.667h-21.334a21.333 21.333 0 0 1 0-42.667h21.334a21.333 21.333 0 0 1 0 42.667zM362.667 426.667H256A21.333 21.333 0 0 1 256 384h106.667a21.333 21.333 0 0 1 0 42.667zM362.667 341.333H149.333a21.333 21.333 0 1 1 0-42.666h213.334a21.333 21.333 0 1 1 0 42.666z"
+                style="fill: #163969"
+              />
+              <circle cx="309.333" cy="138.667" r="32" style="fill: gold" />
+              <path
+                d="M341.333 192h-64a21.333 21.333 0 0 0 0 42.667h64a21.333 21.333 0 1 0 0-42.667z"
+                style="fill: gold"
+              />
+              <rect
+                x="256"
+                y="256"
+                width="106.667"
+                height="21.333"
+                rx="10.667"
+                ry="10.667"
+                style="fill: #a4b1ff"
+              />
+            </svg>
+          </div>
+          <p class="text-white">Build Resume</p>
+          <button
+            class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 shadow-xl text-white font-sans hover:cursor-pointer hover:border hover:border-solid hover:border-blue-600"
+            onclick="takeMe()"
+          >
+            <a href="#create-Resume">Create</a>
+          </button>
+        </div>
+        <div
+          class="w-[33%] bg-indigo-600 bg-opacity-20 shadow-xl p-4 m-2 rounded-tr-3xl flex flex-col p-6 gap-2 items-center"
+        >
+          <div class="w-20 h-20">
+            <svg
+              version="1.1"
+              id="ecommerce_1_"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0"
+              y="0"
+              viewBox="0 0 115 115"
+              style="enable-background: new 0 0 115 115"
+              xml:space="preserve"
+            >
+              <style>
+                .st1 {
+                  fill: #c9b77d;
+                }
+                .st8 {
+                  fill: #ffcc5c;
+                }
+              </style>
+              <g id="recommended_1_">
+                <path
+                  d="M109.459 64.101c0-3.497-2.861-6.358-6.358-6.358H79.985c1.121-1.516 1.931-2.733 2.418-3.701 1.51-2.998 3.357-7.035 4.07-12.556.712-5.521-2.672-12.111-5.521-12.111-2.85 0-4.809 1.069-5.165 3.206-.356 2.137-6.634 12.423-10.553 15.629-3.294 2.695-11.541 8.566-14.087 10.37-5.189.765-9.177 5.224-9.177 10.626v34.997c0 5.347 3.906 9.77 9.018 10.602h41.125c.194-.058.393-.104.578-.18.058-.024.112-.054.17-.079a6.43 6.43 0 0 0 .856-.466c.051-.033.104-.062.154-.096.291-.201.56-.427.813-.672.059-.057.115-.116.172-.175.247-.258.48-.529.682-.824h-.001a6.317 6.317 0 0 0 1.1-3.561v-2.27c0-2.356-1.313-4.399-3.23-5.497h2.215c.391 0 .771-.047 1.143-.116.079-.015.157-.028.235-.045.357-.08.703-.186 1.034-.323.058-.024.112-.054.17-.079a6.43 6.43 0 0 0 .856-.466c.051-.033.103-.061.153-.095.29-.201.56-.427.813-.672.059-.057.115-.116.172-.176.247-.258.481-.528.682-.824h-.001a6.31 6.31 0 0 0 1.1-3.561v-2.271c0-2.356-1.313-4.399-3.23-5.497h1.146c.391 0 .771-.047 1.143-.116.079-.015.157-.028.235-.045a6.21 6.21 0 0 0 1.034-.323c.058-.024.112-.053.169-.079.299-.134.584-.29.857-.466.051-.033.104-.062.153-.096.291-.201.56-.427.814-.672.059-.057.115-.116.172-.175.247-.258.481-.528.682-.824h-.001a6.31 6.31 0 0 0 1.1-3.561v-2.271c0-2.356-1.313-4.399-3.23-5.497h.078c.392 0 .771-.048 1.144-.116.079-.015.157-.028.234-.045a6.25 6.25 0 0 0 1.035-.323c.058-.024.112-.053.169-.079.299-.134.584-.29.857-.466.051-.033.104-.061.153-.096.291-.2.56-.427.814-.672.059-.057.115-.116.172-.175.247-.258.481-.528.682-.824h-.001a6.31 6.31 0 0 0 1.1-3.561v-2.277z"
+                  style="fill: #ffeead"
+                />
+                <path
+                  class="st1"
+                  d="M92.112 114.803c.194-.058.393-.104.578-.18.058-.024.112-.054.17-.079a6.43 6.43 0 0 0 .856-.466c.051-.033.104-.062.154-.096.291-.201.56-.427.813-.672.059-.057.115-.116.172-.175.247-.258.48-.529.682-.824h-.001a6.314 6.314 0 0 0 1.075-3.246 6.917 6.917 0 0 0-.149.232c-.571.951-1.427 1.728-2.405 2.374-2.543 1.077-16.474 1.329-25.617 1.108-9.108-.219-13.621-1.102-13.662-1.11-2.065-.787-3.643-1.563-4.561-2.251-8.718-6.539-6.103-22.449-6.103-22.449l-2.146 6.118v11.115c0 5.347 3.906 9.77 9.018 10.602h41.126z"
+                />
+                <path
+                  d="M31.647 61.033H9.854a5.133 5.133 0 0 0-5.133 5.134v42.631a5.133 5.133 0 0 0 5.133 5.133h21.793a5.134 5.134 0 0 0 5.134-5.133V66.167a5.135 5.135 0 0 0-5.134-5.134z"
+                  style="fill: #ff6f69"
+                />
+                <path
+                  d="M31.647 61.033h-2.059v42.534a5.133 5.133 0 0 1-5.134 5.133H4.721v.098a5.133 5.133 0 0 0 5.133 5.133h21.793a5.134 5.134 0 0 0 5.134-5.133V66.167a5.135 5.135 0 0 0-5.134-5.134z"
+                  style="fill: #e05858"
+                />
+                <path
+                  d="M40.536 58.896h-4.305a3.992 3.992 0 0 0-3.992 3.992v48.12A3.992 3.992 0 0 0 36.231 115h4.305a3.992 3.992 0 0 0 3.992-3.992v-48.12a3.992 3.992 0 0 0-3.992-3.992z"
+                  style="fill: #96ceb4"
+                />
+                <path
+                  d="M40.536 109.115h-4.305a3.992 3.992 0 0 1-3.992-3.993v5.885a3.992 3.992 0 0 0 3.992 3.992h4.305a3.992 3.992 0 0 0 3.992-3.992v-5.885a3.992 3.992 0 0 1-3.992 3.993z"
+                  style="fill: #71a58a"
+                />
+                <path
+                  class="st1"
+                  d="M80.132 53.622c-1.588 1.482-4.13 3.26-5.728 4.121h5.581c1.012-1.25 2.155-3.119 2.714-4.294 1.336-2.808 1.944-3.898 2.867-7.39-1.007 1.697-3.517 5.774-5.434 7.563zM104.479 72.568a6.25 6.25 0 0 0 1.035-.323c.058-.024.112-.053.169-.079.299-.134.584-.29.857-.466.051-.033.104-.061.153-.096.291-.2.56-.427.814-.672.059-.057.115-.116.172-.175.247-.258.481-.528.682-.824h-.001a6.324 6.324 0 0 0 .822-1.722c-3.585 3.195-10.701 3.879-10.701 3.879l4.62.641c.392 0 .771-.048 1.144-.116.078-.017.156-.029.234-.047zM99.895 86.855c.391 0 .771-.047 1.143-.116.079-.015.157-.028.235-.045a6.21 6.21 0 0 0 1.034-.323c.058-.024.112-.053.169-.079.299-.134.584-.29.857-.466.051-.033.104-.062.153-.096.291-.201.56-.427.814-.672.059-.057.115-.116.172-.175.247-.258.481-.528.682-.824h-.001a6.306 6.306 0 0 0 1.097-3.524 6.196 6.196 0 0 0-.318.451c-2.811 4.382-11.902 5.248-11.902 5.248l4.719.622h1.146zM93.406 100.981h2.215c.391 0 .771-.047 1.143-.116.079-.015.157-.028.235-.045.357-.08.703-.186 1.034-.323.058-.024.112-.054.17-.079a6.43 6.43 0 0 0 .856-.466c.051-.033.103-.061.153-.095.29-.201.56-.427.813-.672.059-.057.115-.116.172-.176.247-.258.481-.528.682-.824h-.001a6.31 6.31 0 0 0 1.097-3.522 5.328 5.328 0 0 0-.446.611c-2.811 4.382-11.902 5.248-11.902 5.248l3.852.508c-.025-.015-.048-.034-.073-.049z"
+                />
+                <g>
+                  <path
+                    class="st8"
+                    d="M81.752 0c-2.271 0-4.112 1.841-4.112 4.112s1.841 10.455 4.112 10.455 4.112-8.185 4.112-10.455S84.023 0 81.752 0z"
+                  />
+                </g>
+                <g>
+                  <path
+                    class="st8"
+                    d="M57.337 24.415a4.112 4.112 0 1 0 0 8.224c2.271 0 10.455-1.841 10.455-4.112s-8.184-4.112-10.455-4.112z"
+                  />
+                </g>
+                <g>
+                  <path
+                    class="st8"
+                    d="M106.168 24.415c-2.271 0-10.455 1.841-10.455 4.112s8.185 4.112 10.455 4.112a4.112 4.112 0 1 0 0-8.224z"
+                  />
+                </g>
+                <g>
+                  <path
+                    class="st8"
+                    d="M67.395 8.355a4.111 4.111 0 1 0-5.815 5.815c1.606 1.606 8.695 6.092 10.3 4.486 1.607-1.606-2.879-8.695-4.485-10.301z"
+                  />
+                </g>
+                <g>
+                  <path
+                    class="st8"
+                    d="M101.924 8.355a4.111 4.111 0 0 0-5.815 0c-1.606 1.606-6.091 8.695-4.486 10.3 1.606 1.606 8.695-2.88 10.3-4.486a4.11 4.11 0 0 0 .001-5.814z"
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <p class="text-white">Job Recommendation</p>
+          <button
+            class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 shadow-xl text-white font-sans hover:cursor-pointer hover:border hover:border-solid hover:border-blue-600"
+          >
+            Find
+          </button>
+        </div>
+        <div
+          class="w-[33%] bg-indigo-600 bg-opacity-20 shadow-xl p-4 m-2 rounded-tr-3xl flex flex-col p-6 items-center gap-2 container"
+        >
+          <div class="w-20 h-20">
+            <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0"
+              y="0"
+              viewBox="0 0 512 512"
+              style="enable-background: new 0 0 512 512"
+              xml:space="preserve"
+            >
+              <style>
+                .st0 {
+                  fill: #6770e6;
+                }
+                .st1 {
+                  fill: #5861c7;
+                }
+                .st15 {
+                  fill: #a1f1fc;
+                }
+              </style>
+              <path
+                id="XMLID_145_"
+                class="st0"
+                d="m503.285 450.75-494.564.007a8.718 8.718 0 0 1-8.718-8.718l-.004-315.612a8.718 8.718 0 0 1 8.718-8.718l494.564-.007a8.718 8.718 0 0 1 8.718 8.718l.004 315.612a8.718 8.718 0 0 1-8.718 8.718z"
+              />
+              <path
+                id="XMLID_144_"
+                d="M30.003 412.038 30 156.426a8.718 8.718 0 0 1 8.718-8.718l434.564-.006A8.718 8.718 0 0 1 482 156.42l.003 255.612a8.718 8.718 0 0 1-8.718 8.718l-434.564.006a8.718 8.718 0 0 1-8.718-8.718z"
+                style="fill: #339"
+              />
+              <path
+                d="M429.993 421V92.007L339 .007 102.007 0c-11.046 0-20 8.954-20 20v401h347.986z"
+                style="fill: #69ebfc"
+              />
+              <path
+                class="st15"
+                d="M339 .007 102.007 0c-11.046 0-20 8.954-20 20L339 20.007v-20zM429.993 91H359c-11.046 0-20-8.954-20-20V.007L429.993 91z"
+              />
+              <path
+                class="st0"
+                d="M327.38 181.805h-12.261a58.568 58.568 0 0 0-6.146-14.446l8.499-8.499a4.62 4.62 0 0 0 0-6.534l-14.818-14.818a4.62 4.62 0 0 0-6.533 0l-8.708 8.708a58.497 58.497 0 0 0-14.522-5.873V128.29a4.62 4.62 0 0 0-4.62-4.62h-20.955a4.62 4.62 0 0 0-4.62 4.62v12.343a58.55 58.55 0 0 0-14.395 6.113l-8.55-8.549a4.618 4.618 0 0 0-6.533 0L198.4 153.014a4.62 4.62 0 0 0 0 6.534l8.732 8.732a58.499 58.499 0 0 0-5.889 14.498h-12.062a4.62 4.62 0 0 0-4.62 4.62v20.955a4.62 4.62 0 0 0 4.62 4.62h12.307a58.556 58.556 0 0 0 6.111 14.434l-8.511 8.511a4.62 4.62 0 0 0 0 6.534l14.818 14.817a4.62 4.62 0 0 0 6.533 0l8.673-8.673a58.512 58.512 0 0 0 14.557 5.919v11.974a4.62 4.62 0 0 0 4.62 4.62h20.955a4.62 4.62 0 0 0 4.62-4.62v-12.225a58.55 58.55 0 0 0 14.484-6.143l8.461 8.46a4.62 4.62 0 0 0 6.533 0l14.818-14.818a4.62 4.62 0 0 0 0-6.533l-8.649-8.649A58.526 58.526 0 0 0 315.414 212h11.966a4.62 4.62 0 0 0 4.62-4.62v-20.955a4.62 4.62 0 0 0-4.62-4.62zm-69.062 47.662c-17.689 0-32.029-14.34-32.029-32.029 0-17.689 14.34-32.029 32.029-32.029 17.689 0 32.029 14.34 32.029 32.029 0 17.689-14.34 32.029-32.029 32.029z"
+              />
+              <path
+                d="M363 384H153c-7.732 0-14-6.268-14-14s6.268-14 14-14h210c7.732 0 14 6.268 14 14s-6.268 14-14 14z"
+                style="fill: #fff7f2"
+              />
+              <path
+                class="st0"
+                d="M365.206 216.225c-4.284-1.04-8.619 1.595-9.659 5.89C344.429 267.973 303.675 300 256.44 300c-29.675 0-57.824-12.901-77.229-35.395-11.215-13-18.372-29.443-20.759-47.28l.831.831c1.562 1.562 3.609 2.343 5.657 2.343s4.095-.781 5.657-2.343a7.998 7.998 0 0 0 0-11.313l-15-15a8 8 0 0 0-11.313 0l-15 15a7.998 7.998 0 0 0 0 11.313 8 8 0 0 0 11.313 0l1.655-1.655c2.37 22.02 10.968 42.47 24.844 58.555C189.544 301.077 222.108 316 256.44 316c26.995 0 52.399-8.876 73.467-25.67 20.435-16.29 35.062-39.177 41.188-64.445a7.999 7.999 0 0 0-5.889-9.66zM382.717 177.843a8 8 0 0 0-11.314 0l-1.655 1.655c-2.37-22.02-10.968-42.47-24.844-58.555C322.455 94.923 289.891 80 255.56 80c-26.996 0-52.4 8.876-73.467 25.67-20.435 16.29-35.063 39.177-41.189 64.445a8 8 0 0 0 15.55 3.77C167.571 128.027 208.325 96 255.56 96c29.675 0 57.823 12.901 77.229 35.395 11.216 13 18.373 29.442 20.759 47.279l-.83-.83a8 8 0 0 0-11.314 11.313l15 15c1.562 1.562 3.609 2.343 5.657 2.343s4.095-.781 5.657-2.343l15-15a8.002 8.002 0 0 0-.001-11.314z"
+              />
+              <path
+                d="M304 356H153c-7.732 0-14 6.268-14 14s6.268 14 14 14h151v-28z"
+                style="fill: #ff8354"
+              />
+              <path
+                id="XMLID_143_"
+                class="st1"
+                d="M199.151 450.753h113.704v39.282H199.151z"
+              />
+              <path
+                id="XMLID_142_"
+                class="st0"
+                d="M341.878 511.998 170.13 512c-6.065 0-10.982-4.917-10.982-10.982 0-6.065 4.917-10.982 10.982-10.982l171.747-.002c6.065 0 10.982 4.917 10.982 10.982 0 6.065-4.916 10.982-10.981 10.982z"
+              />
+              <path
+                id="XMLID_141_"
+                class="st1"
+                d="M341.877 501.998 170.13 502c-4.263 0-7.949-2.433-9.77-5.982a10.918 10.918 0 0 0-1.212 5c0 6.065 4.917 10.982 10.982 10.982l171.747-.002c6.065 0 10.982-4.917 10.982-10.982a10.93 10.93 0 0 0-1.212-5c-1.82 3.548-5.507 5.982-9.77 5.982z"
+              />
+            </svg>
+          </div>
+          <p class="text-white">Project Recommendation</p>
+
+          <button
+            class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 shadow-xl text-white font-sans hover:cursor-pointer hover:border hover:border-solid hover:border-blue-600"
+          >
+            Find
+          </button>
+        </div>
+      </div>
     </div>
     <!-- Create Resume -->
-    <div  class="w-[780px] flex flex-col items-center" id="create-Resume">
-        <!-- Name of The User -->
-        <div class="div border w-full flex flex-col items-center gap-2 bg-white m-2 rounded-lg"  >
-            <input class="text-black m-2 bg-transparent items-center text-center text-2xl" placeholder="John Doe" id="name">
-            <hr class="w-full opacity-70">
-            <div class="w-[60%] flex gap-2 items-center justify-between">
-                <input class="text-black m-2 bg-transparent items-center text-center text-xs" placeholder="your@email.com" id="email">
-                <input type="number" class="text-black m-2 bg-transparent items-center text-center text-xs" placeholder="+918895XXXXXX" id="phone">
-                <input class="text-black m-2 bg-transparent items-center text-center text-xs" placeholder="Your City, State" id="city">
-            </div>
-            <hr class="w-full opacity-70">
-            <div class="w-[80%]">
-                <div class="w-full p-4">
-                    <p class="text-black text-xl font-semibold">Professional Summary</p>
-                    <textarea class="w-full bg-transparent text-sm text-black resize-none p-2" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis neque iusto magnam voluptatem nemo error distinctio reiciendis aliquid dolor." id="summary"></textarea>
-                </div> 
-                <div class="w-full p-4">
-                    <p class="text-black text-xl font-semibold">Work History</p>
-                    <textarea class="w-full bg-transparent text-sm text-black resize-none p-2" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis neque iusto magnam voluptatem nemo error distinctio reiciendis aliquid dolor." id="workHistory"></textarea>
-                </div>   
-                <div class="w-full p-4">
-                    <p class="text-black text-xl font-semibold">Education</p>
-                    <textarea class="w-full bg-transparent text-sm text-black resize-none p-2" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis neque iusto magnam voluptatem nemo error distinctio reiciendis aliquid dolor." id="education"></textarea>
-                </div>   
-                <div class="w-full p-4">
-                    <p class="text-black text-xl font-semibold">Skills</p>
-                    <textarea class="w-full bg-transparent text-sm text-black resize-none p-2" placeholder="1. Java 2. Node Js" id="skills"></textarea>
-                </div>
-            </div>
-            
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="generatePDF()">Submit</button>
+    <div class="w-[780px] flex flex-col items-center" id="create-Resume">
+      <!-- Name of The User -->
+      <div
+        class="div border w-full flex flex-col items-center gap-2 bg-white m-2 rounded-lg"
+      >
+        <input
+          class="text-black m-2 bg-transparent items-center text-center text-2xl"
+          placeholder="John Doe"
+          id="name"
+        />
+        <hr class="w-full opacity-70" />
+        <div class="w-[60%] flex gap-2 items-center justify-between">
+          <input
+            class="text-black m-2 bg-transparent items-center text-center text-xs"
+            placeholder="your@email.com"
+            id="email"
+          />
+          <input
+            type="number"
+            class="text-black m-2 bg-transparent items-center text-center text-xs"
+            placeholder="+918895XXXXXX"
+            id="phone"
+          />
+          <input
+            class="text-black m-2 bg-transparent items-center text-center text-xs"
+            placeholder="Your City, State"
+            id="city"
+          />
         </div>
+        <hr class="w-full opacity-70" />
+        <div class="w-[80%]">
+          <div class="w-full p-4">
+            <p class="text-black text-xl font-semibold">Professional Summary</p>
+            <textarea
+              class="w-full bg-transparent text-sm text-black resize-none p-2"
+              placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis neque iusto magnam voluptatem nemo error distinctio reiciendis aliquid dolor."
+              id="summary"
+            ></textarea>
+          </div>
+          <div class="w-full p-4">
+            <p class="text-black text-xl font-semibold">Work History</p>
+            <textarea
+              class="w-full bg-transparent text-sm text-black resize-none p-2"
+              placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis neque iusto magnam voluptatem nemo error distinctio reiciendis aliquid dolor."
+              id="workHistory"
+            ></textarea>
+          </div>
+          <div class="w-full p-4">
+            <p class="text-black text-xl font-semibold">Education</p>
+            <textarea
+              class="w-full bg-transparent text-sm text-black resize-none p-2"
+              placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis neque iusto magnam voluptatem nemo error distinctio reiciendis aliquid dolor."
+              id="education"
+            ></textarea>
+          </div>
+          <div class="w-full p-4">
+            <p class="text-black text-xl font-semibold">Skills</p>
+            <textarea
+              class="w-full bg-transparent text-sm text-black resize-none p-2"
+              placeholder="1. Java 2. Node Js"
+              id="skills"
+            ></textarea>
+          </div>
+        </div>
+      </div>
     </div>
+    <button
+      id="submitbtn"
+      type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+      Submit
+    </button>
     <script src="homeScript.js"></script>
-    
-</body>
+    <script src="printThis.js"></script>
+  </body>
 </html>
