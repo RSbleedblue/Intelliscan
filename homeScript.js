@@ -38,13 +38,27 @@ $(document).ready(function () {
 const drawer = document.getElementById("drawer");
 const main = document.getElementById("mainPage");
 const logoContainer = document.getElementById("logo-container");
-function getDrawer() {
+function getDrawer(select) {
   drawer.classList.remove('-left-200');
   drawer.classList.add('left-0'); 
   main.classList.add('opacity-20');
   main.classList.add('z-0');
   drawer.classList.add('z-999');
   logoContainer.classList.add("ml-[20%]");
+  if(select === 'job'){
+    const welcomeText = document.getElementById("welcomeText");
+    welcomeText.innerHTML = '';
+    welcomeText.innerHTML = `Hi John Doe,
+    Intelliscan Job Recommendation will help you find perfect match for you!`;
+  }
+  else if(select === 'project'){
+    
+    const welcomeText = document.getElementById("welcomeText");
+    welcomeText.innerHTML = '';
+    welcomeText.innerHTML = `Hi John Doe,
+    Intelliscan Project Recommendation will help you find perfect match for you!`;
+
+  }
 }
 drawer.querySelector('[data-modal-hide]').onclick = function(){
   drawer.classList.remove('left-0');
@@ -52,3 +66,12 @@ drawer.querySelector('[data-modal-hide]').onclick = function(){
   main.classList.remove('opacity-20','z-999');
   logoContainer.classList.remove("ml-[20%]");
 }
+function loadMainPage(){
+  const getUserName =JSON.parse (localStorage.getItem("userData")).userName;
+  if(getUserName === null){
+    return;
+  }
+  const welcomeText  = document.getElementById("welcomeTextMain");
+  welcomeText.innerHTML = `Welcome <span class="gradient-text font-semibold">${getUserName}</span>`;
+}
+loadMainPage();
