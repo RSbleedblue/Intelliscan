@@ -37,21 +37,18 @@ $(document).ready(function () {
 
 const drawer = document.getElementById("drawer");
 const main = document.getElementById("mainPage");
+const logoContainer = document.getElementById("logo-container");
 function getDrawer() {
-  drawer.classList.remove('hidden');
-  drawer.classList.add('visible'); 
+  drawer.classList.remove('-left-200');
+  drawer.classList.add('left-0'); 
   main.classList.add('opacity-20');
-  setTimeout(() => {
-    drawer.classList.add('transition-all', 'ease-in-out', 'delay-200');
-  }, 500); 
+  main.classList.add('z-0');
+  drawer.classList.add('z-999');
+  logoContainer.classList.add("ml-[20%]");
 }
-drawer.querySelector('[data-modal-hide]').onclick = function() {
-  drawer.classList.add('hidden');
-  drawer.classList.remove('visible');
-}
-window.onclick = function(event){
-  if(event.target == drawer){
-    drawer.classList.add( 'hidden' );
-    drawer.classList.remove('visible');
-  }
+drawer.querySelector('[data-modal-hide]').onclick = function(){
+  drawer.classList.remove('left-0');
+  drawer.classList.add('-left-200');
+  main.classList.remove('opacity-20','z-999');
+  logoContainer.classList.remove("ml-[20%]");
 }

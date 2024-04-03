@@ -26,11 +26,13 @@ html {
 .smooth-scroll {
     transition: transform 0.5s ease;
 }
-#drawer.visible {
-    opacity: 1; 
+#drawer {
+    z-index: 999;
   }
   
-#drawer {
-    opacity: 0; 
-    transition: all 0.3s ease-in-out 0.2s; 
-}
+  #drawer [data-modal-hide] {
+    position: absolute; 
+    
+    z-index: 1000; 
+  }
+  
