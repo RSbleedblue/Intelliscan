@@ -33,3 +33,25 @@ $(document).ready(function () {
     $("#create-Resume").printThis();
   });
 });
+
+
+const drawer = document.getElementById("drawer");
+const main = document.getElementById("mainPage");
+function getDrawer() {
+  drawer.classList.remove('hidden');
+  drawer.classList.add('visible'); 
+  main.classList.add('opacity-20');
+  setTimeout(() => {
+    drawer.classList.add('transition-all', 'ease-in-out', 'delay-200');
+  }, 500); 
+}
+drawer.querySelector('[data-modal-hide]').onclick = function() {
+  drawer.classList.add('hidden');
+  drawer.classList.remove('visible');
+}
+window.onclick = function(event){
+  if(event.target == drawer){
+    drawer.classList.add( 'hidden' );
+    drawer.classList.remove('visible');
+  }
+}
