@@ -10,15 +10,15 @@ body{
     -webkit-text-fill-color: transparent;
  }
  .container {
-    width: 33%; /* Set the width as needed */
-    background-color: rgba(255, 255, 255, 0.5); /* Background color with low opacity */
+    width: 33%; 
+    background-color: rgba(255, 255, 255, 0.5); 
     padding: 4px;
     margin: 2px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(10px); /* Apply blur effect */
+    backdrop-filter: blur(10px); 
 }
 html {
     scroll-behavior: smooth;
@@ -26,6 +26,7 @@ html {
 .smooth-scroll {
     transition: transform 0.5s ease;
 }
+
 #drawer {
     z-index: 999;
   }
