@@ -12,19 +12,14 @@
         }
       }
     </script>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Landing Page</title>
   </head>
-  <body class=" bg-black" style="
-  background-image: url('assets/bgLandingMain.jpg');
-  background-size: cover;
-"
->
+  <body class="bg-black" style=" background-image: url('assets/bgLandingMain.jpg'); background-size: cover; background-position: center;">
 
     <!-- Drawer -->
-    <div class="w-[20%] border border-solid border-white h-[700px] rounded-lg fixed flex flex-col items-center p-4 bg-black bg-opacity-90 m-4 -left-[400px] z-999 transition-all ease-in-out delay-250 gap-4" id="drawer">
+    <div class="w-[20%] border border-solid border-white h-[700px] rounded-lg fixed flex flex-col items-center p-4 bg-black bg-opacity-20 m-4 -left-[400px] z-999 transition-all ease-in-out delay-250 gap-2 justify-between  items-center" id="drawer">
       <div class="w-full flex justify-center items-center">
         <h1 class="text-white ml-4 text-3xl gradient-text ">Intelliscan AI</h1>
         <button type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-rose-600 dark:hover:text-white" data-modal-hide="authentication-modal">
@@ -34,12 +29,20 @@
         </button>
       </div>
       <!-- Welcome USER -->
-      <div class="text-white text-xl mt-10 before:animate-typewriter" id="welcomeText">
+      <div class="text-white text-xl text-center mt-10 before:animate-typewriter" id="welcomeText">
           Hi John Doe,
           Intelliscan Job Recommendation will help you find perfect match for you!
       </div>
-      <div>
-
+      <p class="text-white text-2xl">
+        Enter Your Skills
+      </p>
+      <input type="text" class="bg-transparent border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[80%] text-center  p-2.5" placeholder="Java, Node js" id="searchVal"> 
+      <button class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 text-white font-sans hover:bg-transparent border hover:border-solid  hover:text-indigo-100" onclick="callGemini()" id="generateBTN">
+        Find out
+      </button>  
+      <!-- Results -->
+      <div class="min-h-40 overflow-y-auto flex flex-col items-center" id="resultValue">
+        
       </div>
     </div>
     <!-- Flex container -->
@@ -139,8 +142,7 @@
             </svg>
           </div>
           <p class="text-white">Build Resume</p>
-          <button
-            class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 shadow-xl text-white font-sans hover:cursor-pointer hover:border hover:border-solid hover:border-blue-600"
+          <button class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 text-white font-sans hover:bg-transparent border hover:border-solid  hover:text-indigo-100 hover:border-indigo-400"
             onclick="takeMe()"
           >
             <a href="#create-Resume">Create</a>
@@ -231,8 +233,7 @@
             </svg>
           </div>
           <p class="text-white">Job Recommendation</p>
-          <button
-            class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 shadow-xl text-white font-sans hover:cursor-pointer hover:border hover:border-solid hover:border-blue-600"
+          <button class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 text-white font-sans hover:bg-transparent border hover:border-solid  hover:text-indigo-100 hover:border-indigo-400"
             type="button" onclick="getDrawer(`job`)">
             Find
           </button>
@@ -315,8 +316,7 @@
           </div>
           <p class="text-white">Project Recommendation</p>
 
-          <button
-            class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 shadow-xl text-white font-sans hover:cursor-pointer hover:border hover:border-solid hover:border-blue-600" onclick="getDrawer(`project`)"
+          <button class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 text-white font-sans hover:bg-transparent border hover:border-solid  hover:text-indigo-100 hover:border-indigo-400" onclick="getDrawer(`project`)"
           >
             Find
           </button>
@@ -396,12 +396,11 @@
     <button
       id="submitbtn"
       type="submit"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ml-[48%]"
-    >
+      class="rounded-lg p-2 w-[20%] ml-[40%] mb-10 text-center items-center bg-indigo-100 bg-opacity-25 text-white font-sans hover:bg-transparent border hover:border-solid  hover:text-white hover:border-indigo-400">
       Generate
     </button>
-    <script type="module" src="Gemini.js"></script>
     <script src="homeScript.js"></script>
     <script src="printThis.js"></script>
+    <script type="module" src="Gemini.js"></script>
   </body>
 </html>

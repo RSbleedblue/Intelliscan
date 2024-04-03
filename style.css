@@ -66,5 +66,16 @@ z-index: 1000;
     border-right: .15em solid rgb(0, 24, 96); 
     animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
 }
+#resultValue::-webkit-scrollbar {
+    display: none;
+}
+
+#resultValue {
+    scrollbar-width: none; 
+}
+
+#resultValue::-webkit-scrollbar {
+    width: 0; 
+}
 
 

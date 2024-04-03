@@ -76,3 +76,8 @@ function loadMainPage(){
   welcomeText.innerHTML = `Welcome <span class="gradient-text font-semibold">${getUserName}</span>`;
 }
 loadMainPage();
+
+function callGemini(){
+  run();
+  console.log("hi");
+}
