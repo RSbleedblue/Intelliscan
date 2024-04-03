@@ -1,3 +1,5 @@
+
+const getUserName =JSON.parse (localStorage.getItem("userData")).userName;
 function takeMe() {
   const createResumeSection = document.getElementById("create-Resume");
   createResumeSection.classList.add("smooth-scroll");
@@ -48,15 +50,15 @@ function getDrawer(select) {
   if(select === 'job'){
     const welcomeText = document.getElementById("welcomeText");
     welcomeText.innerHTML = '';
-    welcomeText.innerHTML = `Hi John Doe,
-    Intelliscan Job Recommendation will help you find perfect match for you!`;
+    welcomeText.innerHTML = `Hi <span class="gradient-text font-semibold text-2xl">${getUserName}</span>,
+     Intelliscan Job Recommendation will help you find perfect match for you!`;
   }
   else if(select === 'project'){
     
     const welcomeText = document.getElementById("welcomeText");
     welcomeText.innerHTML = '';
-    welcomeText.innerHTML = `Hi John Doe,
-    Intelliscan Project Recommendation will help you find perfect match for you!`;
+    welcomeText.innerHTML = `Hi <span class="gradient-text font-semibold text-2xl">${getUserName}</span>,
+     Intelliscan Project Recommendation will help you find perfect match for you!`;
 
   }
 }
@@ -67,7 +69,6 @@ drawer.querySelector('[data-modal-hide]').onclick = function(){
   logoContainer.classList.remove("ml-[20%]");
 }
 function loadMainPage(){
-  const getUserName =JSON.parse (localStorage.getItem("userData")).userName;
   if(getUserName === null){
     return;
   }
