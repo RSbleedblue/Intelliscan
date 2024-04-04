@@ -11,7 +11,10 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 let prompt = "";
 
 generateBtn.addEventListener("click", async () => {
+    
+    const labelResult = document.getElementById("labelResult");
     spinner.classList.remove("hidden");
+
 
     if(generateBTN.value === "job"){
         prompt ="Give me five job profile based on my skills set only give me there title this is my skill language " + searchBox.value; + " if the text or stack is irrevalant which means user has inputted wrong value simply send him a alert response to type correct stack"
@@ -40,4 +43,5 @@ generateBtn.addEventListener("click", async () => {
 function displayGeneratedContent(content) {
     
     resultDisplay.innerText = content;
+    labelResult.classList.add("typewriter2");
 }

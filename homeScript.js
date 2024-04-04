@@ -67,7 +67,7 @@ function getDrawer(select) {
   else if(select === 'project'){
     main.classList.add('-z-999');
     drawer.classList.add('z-999');
-    main.style.filter="blur(15px)";
+    main.style.filter="blur(1 5px)";
     
     const changeSkill = document.getElementById("changeSkill");
     const welcomeText = document.getElementById("welcomeText");
@@ -87,7 +87,8 @@ drawer.querySelector('[data-modal-hide]').onclick = function(){
   drawer.classList.add('-left-200');
   main.style.filter = "blur(0px)";
   logoContainer.classList.remove("ml-[20%]");
-  geminiResult.classList.add("hidden");
+  geminiResult.classList.remove("left-0");
+  geminiResult.classList.add("-left-[4000px]");
 }
 function loadMainPage(){
   if(getUserName === null){
