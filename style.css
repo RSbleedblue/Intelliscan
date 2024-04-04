@@ -66,25 +66,56 @@ z-index: 1000;
     border-right: .15em solid rgb(0, 24, 96); 
     animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
 }
+
 #resultValue::-webkit-scrollbar {
-    display: none;
+    display: relative;
 }
+
 
 #resultValue {
-    scrollbar-width: none; 
+    scrollbar-width: 2px; 
 }
 
 #resultValue::-webkit-scrollbar {
-    width: 0; 
+    width: 2px; 
 }
 #welcomeText::-webkit-scrollbar{
-    display: none;
+    opacity: 10;
 }
 #welcomeText{
-    scrollbar-width: none;
+    scrollbar-width: 2px;
 }
 #welcomeText::-webkit-scrollbar {
-    width: 0; 
+    width: 2px; 
 }
 
+@keyframes typing2 {
+    from { width: 0; }
+    to { width: 70%; }
+}
 
+@keyframes blink-caret2 {
+    from, to { border-color: transparent; }
+    50% { border-color: rgb(0, 34, 255); }
+}
+
+.typewriter2-container {
+    width: 40%; 
+    max-width: 400px; 
+}
+
+.typewriter2::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    border-right: 2px solid rgb(64, 0, 255);
+    margin-left: 5px;
+    animation: blink-caret2 0.75s step-end infinite;
+}
+
+.typewriter2 {
+    overflow: hidden;
+    white-space: nowrap; 
+    border-right: .15em solid rgb(0, 24, 96); 
+    animation: typing2 2s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}

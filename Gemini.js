@@ -2,6 +2,8 @@ const searchBox = document.getElementById("searchVal");
 const generateBtn = document.getElementById("generateBTN");
 const spinner = document.getElementById("spinner");
 const welcomeText = document.getElementById("welcomeText");
+const geminiResult = document.getElementById("geminiResult");
+const resultDisplay = document.getElementById("resultDisplay");
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 const API_KEY = "AIzaSyDwBhTsKHEl2cMLKPrBeaK5SjVW9JKadY4"; 
@@ -12,11 +14,11 @@ generateBtn.addEventListener("click", async () => {
     spinner.classList.remove("hidden");
 
     if(generateBTN.value === "job"){
-        prompt ="Give me five job profile based on my skills set only give me there title this is my skill language " + searchBox.value;
+        prompt ="Give me five job profile based on my skills set only give me there title this is my skill language " + searchBox.value; + " if the text or stack is irrevalant which means user has inputted wrong value simply send him a alert response to type correct stack"
     searchBox.value = ""; 
     }
     else{
-        prompt ="Give me five projects based on my tech stack set only give me there title this is my skill language " + searchBox.value;
+        prompt ="Give me five projects based on my tech stack set only give me there title this is my skill language " + searchBox.value + "if the text or stack is irrevalant which means user has inputted wrong value simply send him a alert response to type correct stack";
     searchBox.value = ""; 
     }
     try {
@@ -24,7 +26,8 @@ generateBtn.addEventListener("click", async () => {
         const result = await model.generateContent(prompt);
         const response = await result.response;
         const text = await response.text();
-
+        geminiResult.classList.remove("-left-[4000px]");
+        geminiResult.classList.add("left-0");
         spinner.classList.add("hidden");
 
         displayGeneratedContent(text);
@@ -36,5 +39,5 @@ generateBtn.addEventListener("click", async () => {
 
 function displayGeneratedContent(content) {
     
-    welcomeText.innerText = content;
+    resultDisplay.innerText = content;
 }
