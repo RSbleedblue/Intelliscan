@@ -1,18 +1,40 @@
+const searchBox = document.getElementById("searchVal");
+const generateBtn = document.getElementById("generateBTN");
+const spinner = document.getElementById("spinner");
+const welcomeText = document.getElementById("welcomeText");
+
 import { GoogleGenerativeAI } from "@google/generative-ai";
+const API_KEY = "AIzaSyDwBhTsKHEl2cMLKPrBeaK5SjVW9JKadY4"; 
+const genAI = new GoogleGenerativeAI(API_KEY);
+let prompt = "";
 
-const genAI = new GoogleGenerativeAI("AIzaSyDwBhTsKHEl2cMLKPrBeaK5SjVW9JKadY4");
-const searchValue = document.getElementById("searchVal");
-async function run() {
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+generateBtn.addEventListener("click", async () => {
+    spinner.classList.remove("hidden");
 
-  const prompt = `Suggest me job recommendation on my technology where i have skills in ${searchValue} just give me 5 points just name them`
+    if(generateBTN.value === "job"){
+        prompt ="Give me five job profile based on my skills set only give me there title this is my skill language " + searchBox.value;
+    searchBox.value = ""; 
+    }
+    else{
+        prompt ="Give me five projects based on my tech stack set only give me there title this is my skill language " + searchBox.value;
+    searchBox.value = ""; 
+    }
+    try {
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = await response.text();
 
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  console.log(text);
+        spinner.classList.add("hidden");
+
+        displayGeneratedContent(text);
+    } catch (error) {
+        console.error("Error generating content:", error);
+        spinner.classList.add("hidden");
+    }
+});
+
+function displayGeneratedContent(content) {
+    
+    welcomeText.innerText = content;
 }
-function test(){
-    console.log("hi");
-}
-run();

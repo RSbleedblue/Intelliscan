@@ -1,5 +1,5 @@
-
 const getUserName =JSON.parse (localStorage.getItem("userData")).userName;
+const generateBTN = document.getElementById("generateBTN");
 function takeMe() {
   const createResumeSection = document.getElementById("create-Resume");
   createResumeSection.classList.add("smooth-scroll");
@@ -48,17 +48,30 @@ function getDrawer(select) {
   drawer.classList.add('z-999');
   logoContainer.classList.add("ml-[20%]");
   if(select === 'job'){
+    
+    const changeSkill = document.getElementById("changeSkill");
     const welcomeText = document.getElementById("welcomeText");
     welcomeText.innerHTML = '';
     welcomeText.innerHTML = `Hi <span class="gradient-text font-semibold text-2xl">${getUserName}</span>,
      Intelliscan Job Recommendation will help you find perfect match for you!`;
+     changeSkill.classList.add("text-2xl");
+     changeSkill.classList.remove("text-xl");
+    changeSkill.innerHTML = 'Enter Your Skills';
+    generateBTN.value = "job";
+    console.log(generateBTN.value);
+
   }
   else if(select === 'project'){
-    
+    const changeSkill = document.getElementById("changeSkill");
     const welcomeText = document.getElementById("welcomeText");
     welcomeText.innerHTML = '';
     welcomeText.innerHTML = `Hi <span class="gradient-text font-semibold text-2xl">${getUserName}</span>,
      Intelliscan Project Recommendation will help you find perfect match for you!`;
+     changeSkill.classList.remove("text-2xl");
+     changeSkill.classList.add("text-xl");
+    changeSkill.innerHTML = 'Enter Your TechStack for getting Projects';
+    generateBTN.value = "project";
+    console.log(generateBTN.value);
 
   }
 }
@@ -78,6 +91,6 @@ function loadMainPage(){
 loadMainPage();
 
 function callGemini(){
-  run();
+  value;
   console.log("hi");
 }

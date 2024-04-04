@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="importmap">
-      {
-        "imports": {
-          "@google/generative-ai": "https://esm.run/@google/generative-ai"
-        }
-      }
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Landing Page</title>
@@ -19,8 +12,8 @@
   <body class="bg-black" style=" background-image: url('assets/bgLandingMain.jpg'); background-size: cover; background-position: center;">
 
     <!-- Drawer -->
-    <div class="w-[20%] border border-solid border-white h-[700px] rounded-lg fixed flex flex-col items-center p-4 bg-black bg-opacity-20 m-4 -left-[400px] z-999 transition-all ease-in-out delay-250 gap-2 justify-between  items-center" id="drawer">
-      <div class="w-full flex justify-center items-center">
+    <div class="w-[20%] border border-solid border-white h-[700px] rounded-lg fixed flex flex-col items-center p-4 bg-black bg-opacity-90 m-4 -left-[400px] z-999 transition-all ease-in-out delay-250 gap-20   items-center" id="drawer">
+      <div class="w-full flex justify-center items-center" id="handleGemini">
         <h1 class="text-white ml-4 text-3xl gradient-text ">Intelliscan AI</h1>
         <button type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-rose-600 dark:hover:text-white" data-modal-hide="authentication-modal">
           <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -29,20 +22,25 @@
         </button>
       </div>
       <!-- Welcome USER -->
-      <div class="text-white text-xl text-center mt-10 before:animate-typewriter" id="welcomeText">
+      <div class="text-white text-xl text-center mt-10 overflow-y-auto" id="welcomeText">
           Hi John Doe,
           Intelliscan Job Recommendation will help you find perfect match for you!
       </div>
-      <p class="text-white text-2xl">
-        Enter Your Skills
-      </p>
-      <input type="text" class="bg-transparent border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[80%] text-center  p-2.5" placeholder="Java, Node js" id="searchVal"> 
-      <button class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 text-white font-sans hover:bg-transparent border hover:border-solid  hover:text-indigo-100" onclick="callGemini()" id="generateBTN">
-        Find out
-      </button>  
-      <!-- Results -->
-      <div class="min-h-40 overflow-y-auto flex flex-col items-center" id="resultValue">
-        
+      <div class = "flex flex-col gap-10 items-center ">
+        <p class="text-white text-2xl" id="changeSkill">
+          Enter Your Skills
+        </p>
+        <input type="text" class="bg-transparent border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[80%] text-center  p-2.5" placeholder="Java, Node js" id="searchVal"> 
+        <button class="rounded-lg p-2 w-[60%] bg-indigo-100 bg-opacity-25 text-white font-sans hover:bg-transparent border hover:border-solid  hover:text-indigo-100" id="generateBTN">
+          Find out
+        </button>  
+        <div role="status" class = "hidden" id="spinner">
+          <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+              <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+          </svg>
+          <span class="sr-only">Loading...</span>
+      </div>
       </div>
     </div>
     <!-- Flex container -->
@@ -399,8 +397,16 @@
       class="rounded-lg p-2 w-[20%] ml-[40%] mb-10 text-center items-center bg-indigo-100 bg-opacity-25 text-white font-sans hover:bg-transparent border hover:border-solid  hover:text-white hover:border-indigo-400">
       Generate
     </button>
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
     <script src="homeScript.js"></script>
     <script src="printThis.js"></script>
-    <script type="module" src="Gemini.js"></script>
+    <!-- <script src="/chatGPT.js" ></script> -->
+    <script src = "gemini.js" type="module"></script>
   </body>
 </html>

@@ -77,5 +77,14 @@ z-index: 1000;
 #resultValue::-webkit-scrollbar {
     width: 0; 
 }
+#welcomeText::-webkit-scrollbar{
+    display: none;
+}
+#welcomeText{
+    scrollbar-width: none;
+}
+#welcomeText::-webkit-scrollbar {
+    width: 0; 
+}
 
 
