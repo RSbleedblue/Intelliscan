@@ -338,71 +338,42 @@
     <div class="ml-[25%]">
       <div class="w-[780px] flex flex-col items-center" id="create-Resume">
         <!-- Name of The User -->
-        <div
-          class="div border w-full flex flex-col items-center gap-2 bg-white m-2 rounded-lg"
-        >
-          <input
-            class="text-black m-2 bg-transparent items-center text-center text-2xl"
-            placeholder="John Doe"
-            id="name"
-          />
+        <div class="div border w-full flex flex-col items-center gap-2 bg-white m-2 rounded-lg">
+          <input class="text-black m-2 bg-transparent items-center text-center text-2xl" placeholder="John Doe" id="name" />
           <hr class="w-full opacity-70" />
           <div class="w-[60%] flex gap-2 items-center justify-between">
-            <input
-              class="text-black m-2 bg-transparent items-center text-center text-xs"
-              placeholder="your@email.com"
-              id="email"
-            />
-            <input
-              type="number"
-              class="text-black m-2 bg-transparent items-center text-center text-xs"
-              placeholder="+918895XXXXXX"
-              id="phone"
-            />
-            <input
-              class="text-black m-2 bg-transparent items-center text-center text-xs"
-              placeholder="Your City, State"
-              id="city"
-            />
+            <input class="text-black m-2 bg-transparent items-center text-center text-xs" placeholder="your@email.com" id="email" />
+            <input type="number" class="text-black m-2 bg-transparent items-center text-center text-xs" placeholder="+918895XXXXXX" id="phone" />
+            <input class="text-black m-2 bg-transparent items-center text-center text-xs" placeholder="Your City, State" id="city" />
           </div>
           <hr class="w-full opacity-70" />
           <div class="w-[80%]">
-            <div class="w-full p-4">
+            <div class="w-full p-2">
               <p class="text-black text-xl font-semibold">Professional Summary</p>
-              <textarea
-                class="w-full bg-transparent text-sm text-black resize-none p-2"
-                placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis neque iusto magnam voluptatem nemo error distinctio reiciendis aliquid dolor."
-                id="summary"
-              ></textarea>
+              <textarea class="w-full bg-transparent text-sm text-black resize-none p-2" placeholder="E.g., Experienced software developer with a focus on full-stack web development. Skilled in JavaScript, React, and Node.js." id="summary"></textarea>
             </div>
-            <div class="w-full p-4">
+            <div class="w-full p-2">
               <p class="text-black text-xl font-semibold">Work History</p>
-              <textarea
-                class="w-full bg-transparent text-sm text-black resize-none p-2"
-                placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis neque iusto magnam voluptatem nemo error distinctio reiciendis aliquid dolor."
-                id="workHistory"
-              ></textarea>
+              <textarea class="w-full bg-transparent text-sm text-black p-2" style="height: 180px;" placeholder=" 1. XYZ Company (Jan 2018 - Dec 2020)
+Developed and maintained web applications using React and Node.js. Managed a team of junior developers.
+
+2. ABC Corporation (Mar 2016 - Dec 2017)
+Contributed to the development of enterprise-level software solutions using Java and Spring framework."
+              id="workHistory"></textarea>
             </div>
-            <div class="w-full p-4">
+            <div class="w-full p-4 -mt-10">
               <p class="text-black text-xl font-semibold">Education</p>
-              <textarea
-                class="w-full bg-transparent text-sm text-black resize-none p-2"
-                placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde debitis neque iusto magnam voluptatem nemo error distinctio reiciendis aliquid dolor."
-                id="education"
-              ></textarea>
+              <textarea class="w-full bg-transparent text-sm text-black resize-none p-2" placeholder="E.g., Bachelor of Science in Computer Science, University of XYZ, Graduated in May 2015." id="education"></textarea>
             </div>
-            <div class="w-full p-4">
+            <div class="w-full p-4 -mt-10">
               <p class="text-black text-xl font-semibold">Skills</p>
-              <textarea
-                class="w-full bg-transparent text-sm text-black resize-none p-2"
-                placeholder="1. Java 2. Node Js"
-                id="skills"
-              ></textarea>
+              <textarea class="w-full bg-transparent text-sm text-black resize-none p-2" placeholder="E.g., 1. JavaScript (React, Node.js) 2. Java (Spring Boot) 3. HTML5/CSS3 4. SQL/NoSQL databases" id="skills"></textarea>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      
+      
     <!-- Create Resume -->
     
     <button
